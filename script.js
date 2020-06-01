@@ -28,14 +28,42 @@ function addColumn() {
 
     for(let i = 0; i < amountofRows; i++) {
         let cell = document.createElement("td");
-        
         initializeCell(cell)
-        
         allRows[rowCounter].appendChild(cell);
-
         rowCounter++;
-
     }
     amountofColumns++;
 }
 
+/* Feature #3: remove rows from the grid */
+function removeRow() {
+    //grab the main grid
+    let mainGrid = document.getElementById("main-grid");
+    mainGrid.deleteRow(amountofRows-1);
+    amountofRows--;
+}
+
+/* Feature #4: remove columns from the grid */
+function removeColumn() {
+
+    let mainGrid = document.getElementById("main-grid");
+    let allRows = document.querySelectorAll("tr");
+    let rowCounter = 0;
+
+    for(let i = 0; i < amountofRows; i++) {
+        allRows[rowCounter].removeChild(allRows[rowCounter].lastChild);
+        rowCounter++;
+    }
+    amountofColumns--;
+}
+
+
+
+// sets up new cell: sets event handlers and sets class to "uncolored"
+function initializeCell(cell) {
+    // change color on click
+    cell.addEventListener("click", changeColor);
+    // give cell as class called "uncolored"
+    cell.classList.add("uncolored");
+
+}
