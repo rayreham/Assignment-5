@@ -1,5 +1,4 @@
 
-
 /* Feature #1: add rows to the grid */
 let amountofRows = 1;
 let amountofColumns = 2;
@@ -72,6 +71,8 @@ function initializeCell(cell) {
 
 
 
+
+
 /* Feature #6: click on a single cell, changing its color to the currently selected color */
 let currentColor = `${document.getElementById("color-select").value}`
 
@@ -106,3 +107,4 @@ function fillAll() {
     list.forEach(cell => {
         cell.style.backgroundColor = currentColor;
     });
+
