@@ -2,19 +2,48 @@
 <html>
 <head>
     <title></title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
+    
 <body>
+    <!-- Feature #1: add rows to the grid -->
+    <button onclick="addRow()">Add Row</button>
 
-    <!-- Feature #9: clear all cells/restore all cells to their original/initial color -->
+    <!-- Feature #2: add columns to the grid -->
+    <button onclick="addColumn()">Add Column</button>
+
+    <br>
+
+    <!-- Feature #3: remove rows from the grid -->
+    <button onclick="removeRow()">Remove Row</button>
+
+    <!-- Feature #4: remove columns from the grid -->
+    <button onclick="removeColumn()">Remove Column</button>
+
+    <!-- Feature #5: select color from dropdown -->
+    <form>
+        <p>
+            <label>Select list</label>
+            <select id="color-select" onchange="setCurrentColor(this.value)"> <!-- 6 -->
+                <option value="#87bac9">blue</option>
+                <option value="#db5881">pink</option>
+                <option value="#d4e094">green</option>
+                <option value="#f7e277">yellow</option>
+            </select>
+        </p>
+    </form>
+<!-- Feature #9: clear all cells/restore all cells to their original/initial color -->
     <button onclick="clearAll()">Clear All</button>
-
      <table id="main-grid">
         <tr>
             <td></td>
             <td></td>
         </tr>
     </table>
+
     <script src="script.js"></script>
 </body>
 </html>
+
