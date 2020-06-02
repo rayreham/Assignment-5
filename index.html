@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -7,11 +8,48 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- 7 - Fill all uncolored cells with the currently selected color -->
+    
+
+    <!-- Feature #1: add rows to the grid -->
+    <button onclick="addRow()">Add Row</button>
+
+    <!-- Feature #2: add columns to the grid -->
+    <button onclick="addColumn()">Add Column</button>
+
+    <br>
+
+    <!-- Feature #3: remove rows from the grid -->
+    <button onclick="removeRow()">Remove Row</button>
+
+    <!-- Feature #4: remove columns from the grid -->
+    <button onclick="removeColumn()">Remove Column</button>
+
+    <!-- Feature #5: select color from dropdown -->
+    <form>
+        <p>
+            <label>Select list</label>
+            <select id="color-select" onchange="setCurrentColor(this.value)"> <!-- 6 -->
+                <option value="#87bac9">blue</option>
+                <option value="#db5881">pink</option>
+                <option value="#d4e094">green</option>
+                <option value="#f7e277">yellow</option>
+            </select>
+        </p>
+    </form>
+  <!-- 7 - Fill all uncolored cells with the currently selected color -->
     <button onclick="fillUncolored()">Fill all uncolored cells</button>
 
     <!-- 8 - Fill all cells with the currently selected color -->
-    <button onclick="fillAll()">Fill all cells</button>
+    <button onclick="fillAll()">Fill all cells</button>  
+<!-- Feature #9: clear all cells/restore all cells to their original/initial color -->
+    <button onclick="clearAll()">Clear All</button>
+     <table id="main-grid">
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
 
     <script src="script.js"></script>
 </body>
